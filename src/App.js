@@ -33,17 +33,18 @@ export default class App extends Component {
         }
     };
 
+    updateWeather = async (CITY) => {
+        const weatherData = await this.getWeather(CITY);
+        this.setState({ weatherData: weatherData });
+    };
+
     render() {
         return (
             <div className="app">
                 <div className="main">
                     <div className="container">
                         <div className="search-box">
-                            <input
-                                type="text"
-                                className="searchbar"
-                                placeholder="Search for a city"
-                            />
+                            <Searchbar parentCallBack={this.updateWeather} />
                         </div>
                         <div className="weather">
                             {this.state.weatherData !== undefined && (
