@@ -44,7 +44,10 @@ export default class App extends Component {
                 <div className="main">
                     <div className="container">
                         <div className="search-box">
-                            <Searchbar parentCallBack={this.updateWeather} />
+                            <Searchbar
+                                className="searchbar"
+                                parentCallBack={this.updateWeather}
+                            />
                         </div>
                         <div className="weather">
                             {this.state.weatherData !== undefined && (

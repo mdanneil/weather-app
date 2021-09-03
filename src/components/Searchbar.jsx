@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../App.css";
 
 class Searchbar extends Component {
     state = { value: "" };
@@ -14,14 +15,16 @@ class Searchbar extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="searchbar">
-                <input
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    placeholder="Search for a city"
-                />
-            </form>
+            <div className="form-box">
+                <form onSubmit={this.handleSubmit} className="searchbar">
+                    <input
+                        type="text"
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                        placeholder="Search for a city"
+                    />
+                </form>
+            </div>
         );
     }
 }
