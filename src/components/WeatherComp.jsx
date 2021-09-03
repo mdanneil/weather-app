@@ -6,8 +6,8 @@ class WeatherComp extends Component {
         console.log(this.props.data);
         return (
             <>
-                <h1>City: {this.props.data.name}</h1>
-                <h1>Temperature: {this.props.data.main.temp}</h1>
+                <p>City: {this.props.data.name}</p>
+                <p>Temperature: {this.props.data.main.temp}°C</p>
             </>
         );
     }

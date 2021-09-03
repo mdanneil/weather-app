@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import WeatherComp from "./components/WeatherComp";
+import "./App.css";
+import Searchbar from "./components/Searchbar";
 
 export default class App extends Component {
     state = { weatherData: undefined };
@@ -33,11 +35,24 @@ export default class App extends Component {
 
     render() {
         return (
-            <>
-                {this.state.weatherData !== undefined && (
-                    <WeatherComp data={this.state.weatherData} />
-                )}
-            </>
+            <div className="app">
+                <div className="main">
+                    <div className="container">
+                        <div className="search-box">
+                            <input
+                                type="text"
+                                className="searchbar"
+                                placeholder="Search for a city"
+                            />
+                        </div>
+                        <div className="weather">
+                            {this.state.weatherData !== undefined && (
+                                <WeatherComp data={this.state.weatherData} />
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
