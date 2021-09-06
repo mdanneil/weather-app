@@ -11,16 +11,15 @@ export default class App extends Component {
         this.setState({
             weatherData: weatherData,
         });
-        console.log(weatherData);
     }
 
-    getWeather = async () => {
+    getWeather = async (city) => {
         const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-        const city = "Gothenburg";
+        const CITY = city;
 
         try {
             const API_CALL = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+                `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`
             );
             const response = await API_CALL.json();
             if (response.cod === 200) {

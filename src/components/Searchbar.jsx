@@ -6,11 +6,11 @@ class Searchbar extends Component {
 
     handleChange = (e) => {
         this.setState({ value: e.target.value });
-        console.log(e);
     };
 
     handleSubmit = (e) => {
         this.props.parentCallBack(this.state.value);
+        e.preventDefault();
     };
 
     render() {
